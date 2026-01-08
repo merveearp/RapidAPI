@@ -1,0 +1,95 @@
+﻿@model CreateStaffDto
+@{
+    ViewData["Title"] = "AddStaff";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<form asp-controller="Staff" asp-action="AddStaff" method="post">
+    <div class="row">
+
+
+        <div class="col-md-7">
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label class="form-label">Personel Adı</label>
+                        <input type="text" asp-for="FullName" class="form-control" id="fullNameInput" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Personel Ünvanı</label>
+                        <input type="text" asp-for="Title" class="form-control" id="titleInput" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Sosyal Medya 1</label>
+                        <input type="text" asp-for="SocialMedia1" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Sosyal Medya 2</label>
+                        <input type="text" asp-for="SocialMedia2" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Sosyal Medya 3</label>
+                        <input type="text" asp-for="SocialMedia3" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Profil Resmi (URL)</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" id="imageUrlInput" />
+                    </div>
+
+                    <button class="btn btn-primary">
+                        Yeni Personel Ekle
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-5">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+
+                    <img id="imagePreview"
+                         src="/images/default-avatar.png"
+                         class="rounded-circle mb-3"
+                         style="width:120px; height:120px; object-fit:cover;" />
+
+                    <h5 id="namePreview" class="mb-1">Ad Soyad</h5>
+                    <p id="titlePreview" class="text-muted">Ünvan</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+<script>
+    const imageInput = document.getElementById("imageUrlInput");
+    const imagePreview = document.getElementById("imagePreview");
+
+    const nameInput = document.getElementById("fullNameInput");
+    const namePreview = document.getElementById("namePreview");
+
+    const titleInput = document.getElementById("titleInput");
+    const titlePreview = document.getElementById("titlePreview");
+
+    imageInput.addEventListener("input", () => {
+        imagePreview.src = imageInput.value || "/images/default-avatar.png";
+    });
+
+    nameInput.addEventListener("input", () => {
+        namePreview.textContent = nameInput.value || "Ad Soyad";
+    });
+
+    titleInput.addEventListener("input", () => {
+        titlePreview.textContent = titleInput.value || "Ünvan";
+    });
+</script>

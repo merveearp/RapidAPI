@@ -1,0 +1,88 @@
+﻿@model List<TestimonialViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+
+    int count = 0;
+}
+
+
+<div class="d-flex justify-content-start mb-3">
+    <a href="/Testimonial/AddTestimonial" class="btn btn-rounded btn-outline-info">
+        <i class="fa fa-plus me-1"></i>
+        Yeni Referans Ekle
+    </a>
+</div>
+
+<div class="card-title mb-3">
+    <h4 class="mb-0">Personel Tablosu</h4>
+</div>
+
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th style="width:50px">#</th>
+            <th>Profil Fotografı</th>
+            <th>Adı</th>
+            <th>Ünvanı</th>
+            <th style="width:240px">İşlemler</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model == null || !Model.Any())
+        {
+            <tr>
+                <td colspan="4" class="text-center text-muted py-2">
+                    Henüz içerik bulunmamaktadır
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+
+                    <td>
+                        <img src="@(string.IsNullOrEmpty(item.Image)
+                                                                         ? "/images/default-avatar.png"
+                                                                         : item.Image)"
+                             class="rounded-circle"
+                             style="width:45px; height:45px; object-fit:cover;" />
+                    </td>
+
+                    <td>@item.Name</td>
+                    <td>@item.Title</td>
+
+                    <td class="text-nowrap">
+                        <a asp-action="Detail"
+                           asp-route-id="@item.TestimonialId"
+                           class="btn btn-sm btn-outline-secondary me-1">
+                            Detay
+                        </a>
+
+                        <a asp-action="UpdateTestimonial"
+                           asp-route-id="@item.TestimonialId"
+                           class="btn btn-sm btn-success me-1">
+                            Güncelle
+                        </a>
+
+                        <a asp-action="DeleteTestimonial"
+                           asp-route-id="@item.TestimonialId"
+                           class="btn btn-sm btn-danger"
+                           onclick="return confirm('Silmek istediğinize emin misiniz?');">
+                            Sil
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
+
+
+

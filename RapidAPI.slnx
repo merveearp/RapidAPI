@@ -9,5 +9,4 @@
   <Folder Name="/Frontend/">
     <Project Path="Frontend/Hotel.WEBUI/Hotel.WEBUI.csproj" />
   </Folder>
-  <Folder Name="/ToDoList/" />
 </Solution>
