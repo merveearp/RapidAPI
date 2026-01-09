@@ -1,0 +1,165 @@
+﻿@*
+    _UICarouselComponent
+*@
+<section class="hero-carousel">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+
+            <div class="carousel-item active">
+                <div class="carousel-bg"
+                     style="background-image:url('/hotel-html-template/img/carousel-4.jpg')">
+                </div>
+
+                <div class="carousel-overlay"></div>
+
+                <div class="carousel-caption">
+                    <span class="hero-badge">Hayallerinizdeki Tatil</span>
+                    <h2 class="hero-title">
+                        Lüks & Konforu<br />Bir Arada Yaşayın
+                    </h2>
+
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-outline-light">Odalarımız</a>
+                        <a href="#" class="btn btn-dark">Rezervasyon Yap</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-bg"
+                     style="background-image:url('/hotel-html-template/img/carousel-1.webp')">
+                </div>
+
+                <div class="carousel-overlay"></div>
+
+                <div class="carousel-caption">
+                    <span class="hero-badge">Rüya Gibi Bir Tatil</span>
+                    <h1 class="hero-title">
+                        Deniz Manzaralı<br />Özel Odalar
+                    </h1>
+
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-outline-light">Odalarımız</a>
+                        <a href="#" class="btn btn-dark">Rezervasyon Yap</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<style>
+    /* HERO CAROUSEL */
+    .hero-carousel {
+        position: relative;
+        height: 90vh;
+        overflow: hidden;
+    }
+
+        .hero-carousel .carousel,
+        .hero-carousel .carousel-inner,
+        .hero-carousel .carousel-item {
+            height: 100%;
+        }
+
+    /* Background image */
+    .carousel-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.05);
+        /* 🔥 CANLILIK */
+        filter: brightness(1.15) contrast(1.1) saturate(1.15);
+    }
+
+
+    /* Dark gradient overlay */
+    .carousel-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient( to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.15), rgba(0,0,0,0.45) );
+    }
+
+
+    /* Caption */
+    .carousel-caption {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Badge */
+    .hero-badge {
+        letter-spacing: 3px;
+        font-size: 13px;
+        text-transform: uppercase;
+        color: #f1f1f1;
+        margin-bottom: 18px;
+        opacity: 0.85;
+    }
+
+    /* Title */
+    .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4.2rem);
+        font-weight: 600;
+        line-height: 1.2;
+        color: #fff;
+        margin-bottom: 35px;
+    }
+
+    /* Buttons */
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+    }
+
+        .hero-buttons .btn {
+            padding: 14px 36px;
+            font-size: 15px;
+            transition: all .3s ease;
+        }
+
+        .hero-buttons .btn-outline-light:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .hero-buttons .btn-primary {
+            background: #caa169;
+            border-color: #caa169;
+        }
+
+            .hero-buttons .btn-primary:hover {
+                background: #b48b56;
+            }
+
+    /* Controls */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: invert(1);
+        width: 42px;
+        height: 42px;
+    }
+
+</style>

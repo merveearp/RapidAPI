@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Hotel.Business.Abstract;
+using Hotel.DTO.DTOs.RoomDtos;
+using Hotel.Entity.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hotel.WEBAPI.Controllers
@@ -7,34 +11,61 @@ namespace Hotel.WEBAPI.Controllers
     [ApiController]
     public class RoomController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult RoomList()
+        private readonly IRoomService _roomService;
+        private readonly IMapper _mapper;
+
+        public RoomController(IRoomService roomService, IMapper mapper)
         {
-            return Ok();
+            _roomService = roomService;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public IActionResult Index()
+        {
+            var values = _roomService.TGetList();
+            return Ok(values);
+
         }
 
         [HttpPost]
-        public IActionResult AddRoom()
+        public IActionResult AddRoom(CreateRoomDto roomDto)
         {
-            return Ok();
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var values = _mapper.Map<Room>(roomDto);
+            _roomService.TInsert(values);
+            return Ok("Başarıyla eklendi");
         }
 
         [HttpPut]
-        public IActionResult UpdateRoom()
+        public IActionResult UpdateRoom(UpdateRoomDto roomDto)
         {
-            return Ok();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var values = _mapper.Map<Room>(roomDto);
+            _roomService.TUpdate(values);
+            return Ok("Başarıyla güncellendi");
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetRoom()
+        public IActionResult GetRoom(int id)
         {
+           var value = _roomService.TGetById(id);
+            return Ok(value);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteRoom(int id)
+        {
+            var value = _roomService.TGetById(id);
+            _roomService.TDelete(value);
             return Ok();
         }
 
-        [HttpDelete]
-        public IActionResult DeleteRoom()
-        {
-            return Ok();
-        }
     }
 }

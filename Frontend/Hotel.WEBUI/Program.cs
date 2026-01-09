@@ -1,11 +1,14 @@
+using Hotel.DataAccess.Concrete;
+using Hotel.Entity.Concrete;
+using Hotel.WEBUI.Extensions;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.ConfigureService();
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
-builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 
 var app = builder.Build();
 

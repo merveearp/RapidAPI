@@ -14700,3 +14700,61 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
+<style >
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 45px rgba(0,0,0,.25);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .auth-header i {
+        font-size: 46px;
+        color: #1d3557;
+        margin-bottom: 10px;
+    }
+
+    .auth-header h3 {
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+.form-control {
+    height: 48px;
+    border-radius: 10px;
+}
+
+.btn-auth {
+    height: 48px;
+    border-radius: 10px;
+    font-weight: 600;
+    background: #1d3557;
+    color: #fff;
+}
+
+    .btn-auth:hover {
+        background: #16324f;
+    }
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+</style >

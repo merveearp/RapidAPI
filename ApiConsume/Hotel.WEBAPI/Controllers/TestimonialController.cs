@@ -27,7 +27,6 @@ namespace Hotel.WEBAPI.Controllers
         public IActionResult GetTestimonial(int id)
         {
             var value = _testimonialService.TGetById(id);
-            _testimonialService.TDelete(value);
             return Ok(value);
         }
 

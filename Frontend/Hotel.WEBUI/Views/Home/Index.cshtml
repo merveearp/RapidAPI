@@ -1,6 +1,41 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
+<!-- Carousel Start -->
+@await Component.InvokeAsync("_UICarouselComponent")
+<!-- Carousel End -->
+
+<!-- Booking Start -->
+@await Component.InvokeAsync("_UIReservationComponent")
+<!-- Booking End -->
+
+<!-- About Start -->
+@await Component.InvokeAsync("_UIAboutComponent")
+<!-- About End -->
+
+<!-- Room Start -->
+@await Component.InvokeAsync("_UIOurRoomComponent")
+<!-- Room End -->
+
+<!-- Video Start -->
+@await Component.InvokeAsync("_UITrailerComponent")
+<!-- Video Start -->
+
+<!-- Service Start -->
+@await Component.InvokeAsync("_UIServiceComponent")
+<!-- Service End -->
+
+<!-- Testimonial Start -->
+@await Component.InvokeAsync("_UITestimonialComponent")
+<!-- Testimonial End -->
+
+<!-- Team Start -->
+@await Component.InvokeAsync("_UITeamComponent")
+<!-- Team End -->
+
+<!-- Newsletter Start -->
+@await Html.PartialAsync("_UISubscribeComponent.cshtml")
+<!-- Newsletter Start -->

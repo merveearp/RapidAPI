@@ -1,4 +1,4 @@
-/********** Template CSS **********/
+﻿/********** Template CSS **********/
 :root {
     --primary: #FEA116;
     --light: #F1F8FF;
@@ -107,6 +107,25 @@
     bottom: 0;
     background: rgba(15, 23, 43, .7);
     z-index: 1;
+}
+/* HEADER OVERRIDE */
+#header-carousel .carousel-caption {
+    background: transparent !important;
+}
+#header-carousel .carousel-item img {
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+@media (max-width: 768px) {
+    #header-carousel .carousel-item img {
+        object-fit: contain; /* 🔥 cover yerine contain */
+        background: #000; /* boşluk varsa siyah */
+    }
+}
+.carousel-bg {
+    transform: none !important; /* ❌ scale iptal */
+    filter: brightness(1.1) contrast(1.1) saturate(1.1);
 }
 
 .carousel-control-prev,
