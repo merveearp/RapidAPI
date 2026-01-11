@@ -22,7 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ApiConsume\Hotel.DataAccess\Hotel.DataAccess.csproj" />
-    <ProjectReference Include="..\..\Hotel.Entity\Hotel.Entity.csproj" />
+    <ProjectReference Include="..\..\ApiConsume\Hotel.Entity\Hotel.Entity.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>

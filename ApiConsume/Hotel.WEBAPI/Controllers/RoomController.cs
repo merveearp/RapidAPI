@@ -21,7 +21,7 @@ namespace Hotel.WEBAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult RoomList()
         {
             var values = _roomService.TGetList();
             return Ok(values);

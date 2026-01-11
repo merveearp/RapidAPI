@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Hotel.Entity.Concrete;
 using Hotel.WEBUI.Dtos.AboutDtos;
+using Hotel.WEBUI.Dtos.BookingDtos;
 using Hotel.WEBUI.Dtos.RoomDtos;
 using Hotel.WEBUI.Dtos.ServiceDtos;
 using Hotel.WEBUI.Dtos.SubscribeDtos;
@@ -29,7 +30,12 @@ namespace Hotel.WEBUI.Mappings
 
             CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
             CreateMap<ResultSubscribeDto, Subscribe>().ReverseMap();
-           
+
+            CreateMap<ResultBookingDto, Booking>().ReverseMap();
+            CreateMap<UpdateBookingDto, Booking>().ReverseMap();
+            CreateMap<CreateBookingDto, Booking>().ReverseMap();
+
+
         }
     }
 }

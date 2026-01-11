@@ -22,6 +22,7 @@ namespace Hotel.DataAccess.Extensions
             services.AddScoped<IRoomDal, EfRoomDal>();
             services.AddScoped<IServiceDal, EfServiceDal>();
             services.AddScoped<IAboutDal, EfAboutDal>();
+            services.AddScoped<IBookingDal, EfBookingDal>();
         }
     }
 }

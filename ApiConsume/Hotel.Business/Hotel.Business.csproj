@@ -16,8 +16,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Hotel.Entity\Hotel.Entity.csproj" />
+
+
     <ProjectReference Include="..\Hotel.DataAccess\Hotel.DataAccess.csproj" />
+
+
+    <ProjectReference Include="..\Hotel.DTO\Hotel.DTO.csproj" />
+
+
+    <ProjectReference Include="..\Hotel.Entity\Hotel.Entity.csproj" />
   </ItemGroup>
 
 </Project>

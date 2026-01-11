@@ -20,6 +20,7 @@ namespace Hotel.Business.Extensions
             services.AddScoped<IRoomService , RoomManager>();
             services.AddScoped<IServiceService , ServiceManager>();
             services.AddScoped<IAboutService , AboutManager>();
+            services.AddScoped<IBookingService , BookingManager>();
         }
     }
 }

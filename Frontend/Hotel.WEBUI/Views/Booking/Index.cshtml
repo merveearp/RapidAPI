@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+ <!-- Page Header Start -->
+@await Component.InvokeAsync("_UIBookingCoverComponent")
+<!-- Page Header End -->
+
+@await Component.InvokeAsync("_UIReservationComponent")
+
+@await Html.PartialAsync("~/Views/Booking/_AddBooking.cshtml")
+
+
+ <!-- Newsletter Start -->
+@await Html.PartialAsync("~/Views/Booking/_UISubscribeComponent.cshtml")
+<!-- Newsletter Start -->
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+

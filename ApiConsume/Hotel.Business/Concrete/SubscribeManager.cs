@@ -1,13 +1,6 @@
 ﻿using Hotel.Business.Abstract;
 using Hotel.DataAccess.Abstract;
 using Hotel.Entity.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Hotel.Business.Concrete
 {
     public class SubscribeManager(ISubscribeDal _subscribeDal) : ISubscribeService

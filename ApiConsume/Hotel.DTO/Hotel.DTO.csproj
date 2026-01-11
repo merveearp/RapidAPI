@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Hotel.Entity\Hotel.Entity.csproj" />
+    <ProjectReference Include="..\Hotel.Entity\Hotel.Entity.csproj" />
   </ItemGroup>
 
 </Project>
