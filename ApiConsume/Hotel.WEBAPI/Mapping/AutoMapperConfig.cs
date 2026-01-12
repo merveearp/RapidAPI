@@ -41,6 +41,7 @@ namespace Hotel.WEBAPI.Mapping
             CreateMap<ResultBookingDto, Booking>().ReverseMap();
             CreateMap<UpdateBookingDto, Booking>().ReverseMap();
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
+            CreateMap<BookingStatusDto, Booking>().ReverseMap();
 
         }
     }

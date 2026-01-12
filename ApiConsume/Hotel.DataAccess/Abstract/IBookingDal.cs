@@ -9,5 +9,6 @@ namespace Hotel.DataAccess.Abstract
 {
     public interface IBookingDal :IGenericDal<Booking>
     {
+        void BookingStatusApprove(Booking booking);
     }
 }

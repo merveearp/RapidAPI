@@ -9,5 +9,7 @@ namespace Hotel.Business.Abstract
 {
     public interface IBookingService :IGenericService<Booking>
     {
+        void TBookingStatusApprove(Booking booking);
+
     }
 }

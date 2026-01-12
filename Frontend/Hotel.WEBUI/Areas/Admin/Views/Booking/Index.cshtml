@@ -1,0 +1,118 @@
+﻿@model List<ResultBookingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+
+    int count = 0;
+}
+
+<!-- /# column -->
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h4>Rezervasyon Tablosu</h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Rezervasyon Sahibi</th>
+                            <th>Giriş Tarihi</th>
+                            <th>Çıkış Tarihi</th>
+                            <th>Durum</th>
+                            <th>İşlemler </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            count++;
+
+                            <tr>
+                                <th>@count</th>
+                                <td>@item.FullName</td>
+                                <td>@item.Checkin.ToString("dd.MMM.yyyy")</td>
+                                <td>@item.CheckOut.ToString("dd.MMM.yyyy")</td>
+                                <td>
+                                    @if(item.Status == "Onay Bekliyor")
+                                    {
+                                        <span class="badge badge-warning px-2">@item.Status</span>
+                                    }
+                                   else if (item.Status == "Onaylandı")
+                                     {
+                                        <span class="badge badge-success px-2">@item.Status</span>
+                                    }
+                                    
+                                   
+                                   
+                                </td>
+                              <td class="text-center">
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle"
+                                        type="button"
+                                        data-bs-toggle="dropdown">
+                                    İşlemler
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-menu-end">
+
+                                   
+                                        <li>
+                                            <a class="dropdown-item text-success"
+                                               href="/Admin/Booking/Approve/@item.BookingId">
+                                                <i class="fa fa-check me-2"></i> Onayla
+                                            </a>
+                                        </li>
+                                    
+
+                                  
+                                        <li>
+                                            <a class="dropdown-item text-danger"
+                                               href="/Admin/Booking/Cancel/@item.BookingId"
+                                               onclick="return confirm('Rezervasyon iptal edilsin mi?')">
+                                                <i class="fa fa-times me-2"></i> İptal Et
+                                            </a>
+                                        </li>
+                                  
+
+                                    <li>
+                                        <a class="dropdown-item text-warning"
+                                           href="/Admin/Booking/Hold/@item.BookingId">
+                                           <i class="fa fa-hourglass-half me-2"></i> Beklet
+                                              
+                                        </a>
+                                    </li>
+
+                                    <li><hr class="dropdown-divider"></li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="/Admin/Booking/Update/@item.BookingId">
+                                            <i class="fa fa-edit me-2"></i> Güncelle
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="/Admin/Booking/Detail/@item.BookingId">
+                                            <i class="fa fa-eye me-2"></i> Detaylar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+
+         
+                            </tr>
+                        }
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /# column -->

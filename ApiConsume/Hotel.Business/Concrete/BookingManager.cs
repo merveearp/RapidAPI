@@ -42,6 +42,11 @@ namespace Hotel.Business.Concrete
         {
             return _bookingDal.GetList();
         }
+
+        public void TBookingStatusApprove(Booking booking)
+        {
+            _bookingDal.BookingStatusApprove(booking);
+        }
     }
 
 }

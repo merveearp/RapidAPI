@@ -2,7 +2,6 @@
 using AutoMapper;
 using Hotel.Business.Abstract;
 using Hotel.DTO.DTOs.BookingDtos;
-using Hotel.DTO.DTOs.RoomDtos;
 using Hotel.Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -43,13 +42,13 @@ namespace Hotel.WEBAPI.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateBooking(UpdateBookingDto roomDto)
+        public IActionResult UpdateBooking(UpdateBookingDto bookingDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
-            var values = _mapper.Map<Booking>(roomDto);
+            var values = _mapper.Map<Booking>(bookingDto);
             _bookingService.TUpdate(values);
             return Ok("Başarıyla güncellendi");
         }
@@ -67,6 +66,18 @@ namespace Hotel.WEBAPI.Controllers
             var value = _bookingService.TGetById(id);
             _bookingService.TDelete(value);
             return Ok();
+        }
+
+        [HttpPut("IsApprove")]
+        public IActionResult UpdateBookingStatus(BookingStatusDto bookingDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var values = _mapper.Map<Booking>(bookingDto);
+            _bookingService.TBookingStatusApprove(values);
+            return Ok("Başarıyla güncellendi");
         }
     }
 }

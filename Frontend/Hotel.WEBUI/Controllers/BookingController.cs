@@ -31,7 +31,7 @@ namespace Hotel.WEBUI.Controllers
             if (!ModelState.IsValid)
             {
                 TempData["Error"] = "Geçersiz e-posta adresi.";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Booking");
             }
 
             var client = _httpClientFactory.CreateClient();
@@ -53,7 +53,7 @@ namespace Hotel.WEBUI.Controllers
                 TempData["Error"] = "Bülten kaydı sırasında bir hata oluştu.";
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Booking");
         }
 
         [HttpGet]

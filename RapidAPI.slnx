@@ -9,4 +9,7 @@
   <Folder Name="/Frontend/">
     <Project Path="Frontend/Hotel.WEBUI/Hotel.WEBUI.csproj" />
   </Folder>
+  <Folder Name="/RapidApi/">
+    <Project Path="RapidAPİ.Consume/RapidAPİ.Consume.csproj" Id="3f4b9019-203f-4fb5-bcd2-b076e78698c3" />
+  </Folder>
 </Solution>
